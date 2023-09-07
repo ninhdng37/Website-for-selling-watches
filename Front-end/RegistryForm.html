@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Registration Form | CodingLab </title>    
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="css\registry-style.css">
+    <script src="js/registry.js"></script>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+
+    <div class="title">Registration</div>
+
+    <div class="content">
+
+        <div class="user-details">
+
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input id="fullname" type="text" maxlength="50" placeholder="Enter your name" required>
+            <span id="fullname-error" class="errs" style="display: none;"></span>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input id="email" type="email" maxlength="50" placeholder="Enter your email" required>
+            <span id="email-error" class="errs"></span>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Phone number</span>
+            <input id="phone-number" maxlength="10" type="tel" placeholder="Enter your phone number" required>
+            <span id="phone-number-error" class="errs"></span>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input id="password" type="password" minlength="8" maxlength="20" placeholder="Enter your password" required>
+            <span id="pass-error" class="errs" style="display: none;"></span>
+          </div>
+
+          <div class="input-box"></div>
+
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input id="confirmimg-pass" type="password" minlength="8" maxlength="20" placeholder="Confirm your password" required>
+            <span id="confirmimg-pass-error" class="errs" style="display: none;"></span>
+          </div>
+        </div>
+        
+        <div id="registry" class="button">
+          <input type="submit" value="Register">
+        </div>
+
+        <div id="verifying-otp" class="button" style="display: none;">
+          <input type="submit" value="Verify">
+        </div>
+
+    </div>
+    
+  </div>
+
+</body>
+</html>

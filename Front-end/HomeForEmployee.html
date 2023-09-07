@@ -1,0 +1,2196 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>Employee</title>
+	<link rel="shortcut icon" type="image/x-icon" href="assets1/img/favicon.png">
+	<link rel="stylesheet" href="assets1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets1/plugins/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="assets1/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets1/plugins/datatables/datatables.min.css">
+	<link rel="stylesheet" href="assets1/css/feathericon.min.css">
+	<link rel="stylesheet" href="assets1/plugins/morris/morris.css">
+	<link rel="stylesheet" href="assets1/css/style.css"> 
+	<link rel="shortcut icon" type="image/x-icon" href="assets1/img/favicon.png">
+
+	<link rel="stylesheet" href="assets1/css/feathericon.min.css">
+	<link rel="stylesheet" href="assets1/plugins/morris/morris.css">
+	<link rel="stylesheet" type="text/css" href="assets1/css/bootstrap-datetimepicker.min.css">
+
+	<!-- <link rel="stylesheet" href="assets1/css/style.css"> -->
+</head>
+
+<body>
+	<div class="main-wrapper">
+		<div class="header">
+			<div class="header-left">
+				<a href="index.html" class="logo"> <img src="assets/img/home.png" width="50" height="70" alt="logo"> <span class="logoclass">WATCH</span> </a>
+				<!-- <a href="index.html" class="logo logo-small"> <img src="http://127.0.0.1:5500/assets/img/favicon.png" alt="Logo" width="30" height="30"> </a> -->
+			</div>
+			<!-- <a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left"></i> </a> -->
+			<a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
+			<ul class="nav user-menu">
+				  
+				<li class="nav-item dropdown has-arrow">
+					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <span class="user-img"><img class="rounded-circle" src="assets1/img/profiles/avatar-01.jpg" width="31" alt="Soeng Souy"></span> </a>
+					<div class="dropdown-menu">
+						<div class="user-header">
+							<div class="avatar avatar-sm"> <img src="assets1/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle"> </div>
+							<div class="user-text">
+								<h6></h6>
+								<p class="text-muted mb-0">Employee</p>
+							</div>
+						</div> 
+						<!-- <a class="dropdown-item" href="profile.html">My Profile</a>  -->
+						<a id="logout" class="dropdown-item" href="http://localhost:8888/employee/login-form">Logout</a> </div>
+				</li>
+			</ul>
+		</div>
+		<div class="sidebar" id="sidebar">
+			<div class="sidebar-inner slimscroll">
+				<div id="sidebar-menu" class="sidebar-menu">
+					<ul>
+						<!-- <li class="active"> 
+							<a href="index.html"><i class="fas fa-laptop"></i> <span>Home</span></a>
+						 </li> -->
+						<li class="list-divider"></li>
+						<!-- <li > 
+							<a href="history.html"><i class="fas fa-suitcase"></i> <span> Brand </span> <span class="menu-arrow"></span></a>
+						</li> -->
+
+						<!-- BRAND MENU-->
+						<li class="submenu"> <a href="#"><i class="fas fa-cube"></i> <span> BRANDS </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" >
+								<li><a id="all__brand__link" href="">All Brand </a></li>
+								<li><a id="add__brand__link" href=""> Add Brand </a></li>
+							</ul>
+						</li>
+						   
+						<!-- DISTRICT MENU-->
+						<li class="submenu"> <a href="#"><i class="fas fa-cube"></i> <span> DISTRICTS </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" >
+								<li><a id="all__district__link" href="#">All District </a></li>
+								<li><a id="add__district__link" href="#"> Add District </a></li>
+							</ul>
+						</li>
+
+						<!-- INVOICE MENU-->
+						<li class="submenu"> <a href="#"><i class="fas fa-cube"></i> <span> INVOICES </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" >
+								<li><a id="all__invoice__link" href="#">All Invoice </a></li>
+							</ul>
+						</li>
+
+						<!-- ORDER DETAIL MENU-->
+						<!-- <li class="submenu"> <a href="#"><i class="fas fa-cube"></i> <span> ORDER DETAILS </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" >
+								<li><a id="all__order__detail__link" href="#">All Order Detail </a></li>
+								<li><a id="add__order__detail__link" href="#"> Add Order Detail </a></li>
+							</ul>
+						</li> -->
+
+						<!-- ORDER MENU-->
+						<li class="submenu"> <a href="#"><i class="fas fa-cube"></i> <span> ORDERS </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" >
+								<li><a id="all__order__link" href="#">All Order </a></li>
+								<!-- <li><a id="add__order__link" href="#"> Add Order </a></li> -->
+							</ul>
+						</li>
+
+						<!-- PROMOTION DETAIL MENU-->
+						<li class="submenu"> <a href="#"><i class="fas fa-cube"></i> <span> PROMOTION DETAILS </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" >
+								<li><a id="all__promotion__detail__link" href="#">All Promotion Detail </a></li>
+								<!-- <li><a id="add__promotion__detail__link" href="#"> Add Promotion Detail </a></li> -->
+							</ul>
+						</li>
+
+						<!-- PROMOTION MENU-->
+						<li class="submenu"> <a href="#"><i class="fas fa-cube"></i> <span> PROMOTIONS </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" >
+								<li><a id="all__promotion__link" href="#">All Promotion </a></li>
+								<li><a id="add__promotion__link" href="#"> Add Promotion </a></li>
+							</ul>
+						</li>
+
+						<!-- PROVINCE MENU-->
+						<li class="submenu"> <a href="#"><i class="fas fa-cube"></i> <span> PROVINCES </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" >
+								<li><a id="all__province__link" href="#">All Province </a></li>
+								<li><a id="add__province__link" href="#"> Add Province </a></li>
+							</ul>
+						</li>
+
+						<!-- TYPE OF WATCH MENU-->
+						<li class="submenu"> <a href="#"><i class="fas fa-cube"></i> <span> TYPES OF WATCH </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" >
+								<li><a id="all__type__of__watch__link" href="#">All Type Of Watch </a></li>
+								<li><a id="add__type__of__watch__link" href="#"> Add Type Of Watch </a></li>
+							</ul>
+						</li>
+
+						<!-- WARD MENU-->
+						<li class="submenu"> <a href="#"><i class="fas fa-cube"></i> <span> WARDS </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" >
+								<li><a id="all__ward__link" href="#">All Ward </a></li>
+								<li><a id="add__ward__link" href="#"> Add Ward </a></li>
+							</ul>
+						</li>
+
+						<!-- WATCH MENU-->
+						<li class="submenu"> <a href="#"><i class="fas fa-cube"></i> <span> WATCHS </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" >
+								<li><a id="all__watch__link" href="#">All Watch </a></li>
+								<li><a id="add__watch__link" href="#"> Add Watch </a></li>
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- BRAND VIEW -->
+		<div id="brand__view" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">BRANDS</h4>
+                                <a href="" id="add__brand__link__view" class="btn btn-primary float-right veiwbutton ">ADD BRAND</a>
+                            </div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Brand Name</label>
+										<input id="input__brand__name" class="form-control" type="text" placeholder="Brand name">
+										
+									</div>
+								</div>
+
+								<div class="col-md-4">
+								</div>
+
+								<div class="col-md-4">
+								</div>
+
+								<div class="col-md-4">
+									<!-- <button type="button" class="btn btn-primary buttonedit">Search</button> -->
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table id="brand__table" class="table table-stripped table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th>Brand ID</th>
+												<th>Brand Name</th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<!-- <tr>
+												<td>0001</td>
+												<td>Bovet</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__brand__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__brand__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>0002</td>
+												<td>Rolex</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__brand__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__brand__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+													</div>
+												</td>
+											</tr>											 -->
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="brand__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Brand ID</label>
+										<input id="brand__id" class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Brand Name</label>
+										<input id="brand__name" class="form-control" type="text">
+									</div>
+								</div>
+
+							</div>
+						</form>
+					</div>
+
+				</div>
+				<button id="update__brand__btn" type="button" class="btn btn-primary buttonedit">Save</button>
+			</div>
+
+			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body text-center"> <img src="assets1/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this brand?</h3>
+							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+								<button id="delete__brand__btn" type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>		
+
+		<!-- DISTRICT VIEW -->
+
+		<div id="district__view" class="page-wrapper"" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">DISTRICTS</h4>
+                                <a href="" id="add__district__link__view" class="btn btn-primary float-right veiwbutton ">ADD DISTRICT</a>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>District Name</label>
+										<input id="input__district__name" class="form-control" type="text" placeholder="District Name">
+										
+									</div>
+								</div>
+
+								<div class="col-md-4">
+								</div>
+
+								<div class="col-md-4">
+								</div>
+
+								<div class="col-md-4">
+									<!-- <button type="button" class="btn btn-primary buttonedit">Search</button> -->
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table id="district__table" class="datatable table table-stripped table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th>District ID</th>
+												<th>District Name</th>
+												<th>Province Name</th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<tr>
+												<td>0001</td>
+												<td>Ba Vì</td>
+												<td>Hà Nội</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right">
+															 <a class="dropdown-item edit__district__link" href=#""><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															 <a class="dropdown-item delete__district__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>0002</td>
+												<td>Đông Hồ</td>
+												<td>Hà Nội</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+													</div>
+												</td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="district__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>District ID</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>District Name</label>
+										<input class="form-control" type="text">
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Province Name</label>
+										<select class="form-control" id="sel3" name="sellist1">
+											<option>Select</option>
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+
+							
+						</form>
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary buttonedit">Save</button>
+			</div>
+			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body text-center"> <img src="assets1/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this Asset?</h3>
+							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- INVOICE VIEW -->
+
+		<div id="invoice__view" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">INVOICES</h4>
+                                
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Invoice ID</label>
+										<input id="input__invoice__id" class="form-control" type="text" placeholder="Invoice ID">
+										
+									</div>
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table id="invoice__table" class="datatable table table-stripped table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th>Invoice ID</th>
+												<th>Creation Date</th>
+												<th>Order ID</th>
+												<th>Total Money</th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<tr>
+												<td>0001</td>
+												<td>
+													01/01/2023
+                                                </td>
+												<td>BKG-0001</td>
+												<td>BKG-0001</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__invoice__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> View</a>
+															<!-- <a class="dropdown-item delete__invoice__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div> -->
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>0002</td>
+												<td>
+													01/02/2023
+                                                </td>
+												<td>0001</td>
+												<td>1000</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__invoice__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> View</a> 
+															<!-- <a class="dropdown-item delete__invoice__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div> -->
+													</div>
+												</td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="invoice__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Invoice ID</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Creation Date</label>
+										<div class="cal-icon">
+											<input type="text" class="form-control datetimepicker" >
+										</div>
+									</div>
+								</div>
+							
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Order ID</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Total Money</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body text-center"> <img src="assets1/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this Asset?</h3>
+							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ORDER DETAIL VIEW -->
+
+		<!-- <div id="order__detail__view" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">ORDER DETAILS</h4>
+                                
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Order ID</label>
+										<input id="input__order__detail__id" class="form-control" type="text" placeholder="Order ID">
+										
+									</div>
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table id="order__detail__table" class="datatable table table-stripped table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th>WATCH NAME</th>
+												<th>ORDER ID</th>
+												<th>QUANTITY</th>
+												<th>UNIT PRICE</th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<tr>
+												<td>ROLEX</td>
+												<td>0123</td>
+												<td>10</td>
+												<td>10</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__order__detail__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> View</a> 
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>WALLET</td>
+												<td>0111</td>
+												<td>10</td>
+												<td>5</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__order__detail__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> View</a> 
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="order__detail__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Watch Name</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Order ID</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Quantity</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Unit Price</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body text-center"> <img src="assets1/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this Asset?</h3>
+							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>  -->
+
+		<!-- ORDER VIEW -->
+
+		<div id="order__view" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">ORDERS</h4>
+                                <!-- <a href="" class="btn btn-primary float-right veiwbutton ">ADD ORDER</a> -->
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Order ID</label>
+										<input id="input__order__id" class="form-control" type="text">
+										
+									</div>
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table id="order__table" class="datatable table table-stripped table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th>ORDER ID</th>
+												<th>ORDER DATE</th>
+												<th>CUSTOMER NAME</th>
+												<th>EMPLOYEE NAME</th>
+												<th>INVOICE ID</th>
+												<th>STATUS</th>
+												<th>PROVINCE</th>
+												<th>DISTRICT</th>
+												<th>WARD</th>
+												<th>APARTMENT NUMBER</th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<!-- <tr>
+												<td>0001</td>
+												<td>01/01/2023</td>
+												<td>Nguyen Van A</td>
+												<td>Nguyen Van B</td>
+												<td>Not available</td>
+												<td>3</td>
+												<td>Ha Noi</td>
+												<td>Ba Vi</td>
+												<td>Son Dong</td>
+												<td>Xom 7</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__order__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>0002</td>
+												<td>01/02/2023</td>
+												<td>Nguyen Van C</td>
+												<td>Nguyen Van D</td>
+												<td>Not available</td>
+												<td>3</td>
+												<td>Ha Noi</td>
+												<td>Ba Vi</td>
+												<td>Son Đong</td>
+												<td>Xom 7</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__order__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr> -->
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="order__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Order ID</label>
+										<input id="order__id" class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Order Date</label>
+										<div class="cal-icon">
+											<input type="text" class="form-control datetimepicker" disabled>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Customer Name</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Employee Name</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Invoice ID</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+							
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Status</label>
+										<select id="order__status" class="form-control" name="sellist1">
+											<option>Select</option>
+											<option value="3">Pending</option>
+											<option value="4">Approved</option>
+											<option value="2">Being transported</option>
+											<option value="1">Finished</option>
+											<option value="0">Canceled</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Province</label>
+										<!-- <select class="form-control" name="sellist1" disabled>
+											<option>Select</option>
+											<option value="Ha Noi">Ha Noi</option>
+											<option value="Ho Chi Minh">Ho Chi Minh</option>
+											<option value="Hai Phong">Hai Phong</option>
+											<option value="Da Nang">Da Nang</option>
+											<option value="Ca Mau">Ca Mau</option>
+										</select> -->
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>District</label>
+										<!-- <select class="form-control" name="sellist1" disabled>
+											<option>Select</option>
+											<option value="Son Dong">Son Dong</option>
+										</select> -->
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Ward</label>
+										<!-- <select class="form-control" id="sel3" name="sellist1" disabled>
+											<option>Select</option>
+											<option value="Xom 7">Xom 7</option>
+										</select> -->
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Apartment Number</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+							</div>
+							<button id="update__order__btn" type="button" class="btn btn-primary buttonedit">Save</button>
+						</form>
+					</div>
+
+					<div id="order__detail__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								
+								
+							</div>
+						</form>
+					</div>
+
+				</div>
+			</div>
+			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body text-center"> <img src="assets1/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this Asset?</h3>
+							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- PROMOTION DETAIL VIEW -->
+
+		<div id="promotion__detail__view" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">PROMOTION DETAILS</h4>
+                                <!-- <a href="" class="btn btn-primary float-right veiwbutton ">ADD PROMOTION DETAIL</a> -->
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Promotion ID</label>
+										<input class="form-control" id="input__promotion__detail__id" type="text">
+										
+									</div>
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table id="promotion__detail__table" class="datatable table table-stripped table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th>PROMOTION ID</th>
+												<th>WATCH NAME</th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<tr>
+												<td>0001</td>
+												<td>ROLEX</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__promotion__detail__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>0002</td>
+												<td>CALPET</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__promotion__detail__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="promotion__detail__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Promotion ID</label>
+										<input class="form-control" type="text">
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Watch Name</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									
+								</div>
+
+							</div>
+						</form>
+						</div>
+				</div>
+				<button type="button" class="btn btn-primary buttonedit">Save</button>
+			</div>
+			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body text-center"> <img src="assets1/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this Asset?</h3>
+							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- PROMOTION VIEW -->
+
+		<div id="promotion__view" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">PROMOTIONS</h4>
+                                <a id="add__promotion__link__view" href="" class="btn btn-primary float-right veiwbutton ">ADD PROMOTION</a>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Promotion ID</label>
+										<input id="input__promotion__id" class="form-control" type="text">
+										
+									</div>
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table id="promotion__table" class="datatable table table-stripped table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th>PROMOTION ID</th>
+												<th>START DATE</th>
+												<th>END DATE</th>
+												<th>DISCOUNT</th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<tr>
+												<td>0001</td>
+												<td>01/01/2023</td>
+												<td>01/02/2023</td>
+												<td>10</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__promotion__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__promotion__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>0002</td>
+												<td>01/01/2023</td>
+												<td>01/02/2023</td>
+												<td>10</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__promotion__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__promotion__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="promotion__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Promotion ID</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Start Date</label>
+										<div class="cal-icon">
+											<input type="text" class="form-control datetimepicker">
+										</div>
+									</div>
+								</div>
+
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>End Date</label>
+										<div class="cal-icon">
+											<input type="text" class="form-control datetimepicker">
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Discount</label>
+										<input class="form-control" type="text">
+									</div>
+								</div>
+
+							</div>							
+
+							
+						</form>
+					</div>
+					
+				</div>
+				<button type="button" class="btn btn-primary buttonedit">Save</button>
+			</div>
+			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body text-center"> <img src="assets1/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this Asset?</h3>
+							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- PROVINCE VIEW -->
+
+		<div id="province__view" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">PROVINCES</h4>
+                                <a id="add__province__link__view" href="" class="btn btn-primary float-right veiwbutton ">ADD PROVINCE</a>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Province Name</label>
+										<input id="input__province__name" class="form-control" type="text">
+										
+									</div>
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table id="province__table" class="datatable table table-stripped table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th>PROVINCE ID</th>
+												<th>PROVINCE NAME</th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<!-- <tr>
+												<td>0001</td>
+												<td>Ha Noi</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__province__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__province__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>0002</td>
+												<td>TP Ho Chi Minh</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__province__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__province__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+													</div>
+												</td>
+											</tr> -->
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="province__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Province ID</label>
+										<input id="province__id" class="form-control" type="text" disabled>
+									</div>
+								</div>
+							
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Province Name</label>
+										<input id="province__name" class="form-control" type="text" >
+									</div>
+								</div>
+						
+							</div>
+							<button id="update__province__btn" type="button" class="btn btn-primary buttonedit">Save</button>
+						</form>
+						</div>
+				</div>
+			</div>
+
+			<!-- <div id="delete_asset" class="modal fade delete-modal" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body text-center"> <img src="assets1/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this province?</h3>
+							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+								<button id="" type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			
+		</div>
+
+		<!-- TYPE OF WATCH VIEW -->
+
+		<div id="type__of__watch__view" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">TYPE OF WATCHS</h4>
+                                <a id="add__type__of__watch__link__view" href="" class="btn btn-primary float-right veiwbutton ">ADD TYPE OF WATCH</a>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Type of watch name</label>
+										<input id="input__type__of__watch__name" class="form-control" type="text">
+										
+									</div>
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table id="type__of__watch__table" class="datatable table table-stripped table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th>TYPE OF WATCH ID</th>
+												<th>TYPE OF WATCH NAME </th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<!-- <tr>
+												<td>1</td>
+												<td>ROLEX</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__type__of__watch__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__type__of__watch__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>2</td>
+												<td>CALPET</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__type__of__watch__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__type__of__watch__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr> -->
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="type__of__watch__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Type of watch ID</label>
+										<input id="type__of__watch__id" class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Type of watch name</label>
+										<input id="type__of__watch__name" class="form-control" type="text">
+									</div>
+								</div>
+							</div>
+							<button id="update__type__of__watch__btn" type="button" class="btn btn-primary buttonedit">Save</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body text-center"> <img src="assets1/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this Asset?</h3>
+							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- WARD VIEW -->
+
+		<div id="ward__view" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">WARDS</h4>
+                                <a id="add__ward__link__view" href="" class="btn btn-primary float-right veiwbutton ">ADD WARD</a>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Ward Name</label>
+										<input id="input__ward_name" class="form-control" type="text">
+										
+									</div>
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table id="ward__table" class="datatable table table-stripped table table-hover table-center mb-0">
+										<thead>
+											<tr>
+
+												<th>WARD ID</th>
+												<th>WARD NAME</th>
+												<th>DISTRICT NAME</th>
+												<th>PROVINCE NAME</th>
+
+											</tr>
+										</thead>
+										<tbody>
+
+											<tr>
+												<td>1</td>
+												<td>Hiep Phu</td>
+												<td>TP Thu Duc</td>
+												<td>TP Ho Chi Minh</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__ward__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__ward__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>2</td>
+												<td>Hiep Binh Chanh</td>
+												<td>TP Thu Duc</td>
+												<td>TP Ho Chi Minh</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__ward__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__ward__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="ward__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Ward ID</label>
+										<input class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Ward Name</label>
+										<input class="form-control" type="text">
+									</div>
+								</div>
+							
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>District Name</label>
+										<select class="form-control" id="sel3" name="sellist1">
+											<option>Select</option>
+											<option value="TP Thu Duc">TP Thu Duc</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Province Name</label>
+										<select class="form-control" id="sel3" name="sellist1">
+											<option>Select</option>
+											<option value="TP Ho Chi Minh">TP Ho Chi Minh</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+							<button type="button" class="btn btn-primary buttonedit">Save</button>
+						</form>
+					</div>
+
+				</div>
+			</div>
+			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body text-center"> <img src="assets1/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this Asset?</h3>
+							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- WATCH VIEW -->
+
+		<div id="watch__view" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">WATCHS</h4>
+                                <a id="add__watch__link__view" href="" class="btn btn-primary float-right veiwbutton ">ADD WATCH</a>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Watch Name</label>
+										<input id="input__watch_name" class="form-control" type="text">
+									</div>
+								</div>
+								
+							</div>
+							
+						</form>
+					</div>
+
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table id="watch__table" class="datatable table table-stripped table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th>WATCH ID</th>
+												<th>WATCH NAME</th>
+												<th>PRICE</th>
+												<th>IMAGE</th>
+												<th>STATUS</th>
+												<th>QUANTITY</th>
+												<th>BRAND NAME</th>
+												<th>TYPE OF WATCH</th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<!-- <tr>
+												<td>1</td>
+												<td>ROLEX</td>
+												<td>10</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2">
+															<img class="avatar-img rounded-circle" src="assets/img/featured1.png" alt="User Image">
+														</a>														
+													</h2>
+                                                </td>
+												<td>Available</td>
+												<td>10</td>
+												<td>ROLEX</td>
+												<td>Beauty</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__watch__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__watch__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>2</td>
+												<td>CALPET</td>
+												<td>10</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="#" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/featured1.png" alt="User Image"></a>
+														
+													</h2>
+                                                </td>
+												<td>Available</td>
+												<td>10</td>
+												<td>ROLEX</td>
+												<td>Beauty</td>
+												<td class="text-right">
+													<div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+														<div class="dropdown-menu dropdown-menu-right"> 
+															<a class="dropdown-item edit__watch__link" href="#"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+															<a class="dropdown-item delete__watch__link" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+														</div>
+													</div>
+												</td>
+											</tr> -->
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="watch__data" class="col-lg-12">
+						<form>
+							<div class="row formtype">
+						
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Watch ID</label>
+										<input id="watch__id" class="form-control" type="text" disabled>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Watch Name</label>
+										<input id="watch__name" class="form-control" type="text">
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Price</label>
+										<input id="watch__price" class="form-control" type="text">
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Image</label>
+										<div class="custom-file mb-3">
+											<input id="watch__img" class="form-control" type="file" class="custom-file-input"  name="filename">
+											<label class="custom-file-label" for="watch__img">Choose file</label>
+										</div>
+									</div>
+									<div class="image-view">
+										<img id="image__view"  src="" alt="Image Preview" style="max-width: 100%; height: 100px;">
+									</div>
+								</div>
+							
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Status</label>
+										<select id="watch__status" class="form-control" id="sel3" name="sellist1">
+											<option>Select</option>
+											<option value="2">No longer available for sale</option>
+											<option value="0">Out of stock</option>
+											<option value="1">Available</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Quantity</label>
+										<input id="watch__quantity" class="form-control" type="text">
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Brand Name</label>
+										<select id="brand__id__for__watch" class="form-control" name="sellist1">
+											<option>Select</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Type Of Watch</label>
+										<select id="watch__type__id" class="form-control" id="sel3" name="sellist1">
+											<option>Select</option>
+										</select>
+									</div>
+								</div>								
+						
+							</div>
+						</form>
+						<button id="update__watch__btn" type="button" class="btn btn-primary buttonedit">Save</button>
+					</div>
+				</div>
+			</div>
+			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body text-center"> <img src="assets1/img/sent.png" alt="" width="50" height="46">
+							<h3 class="delete_class">Are you sure want to delete this Asset?</h3>
+							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ADD BRAND -->
+
+		<div id="add__brand" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<h3 class="page-title mt-5">Add Brand</h3> </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Brand Name</label>
+										<input id="brand__name__create" class="form-control" type="text"> </div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<button id="add__brand__btn" type="button" class="btn btn-primary buttonedit1">Create Brand</button>
+			</div>
+		</div>
+
+		<!-- ADD DISTRICT -->
+
+		<div id="add__district" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<h3 class="page-title mt-5">Add District</h3> </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>District Name</label>
+										<input class="form-control" type="text"> </div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Province Name</label>
+										<select class="form-control" id="sel1" name="sellist1">
+											<option>Select</option>
+											<option>Jennifer Robinson</option>
+											<option>Terry Baker</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary buttonedit1">Create District</button>
+			</div>
+		</div>
+
+		<!-- ADDING INVOICE DO NOT NEED BECAUSE IT WILL BE CREATED WHEN PAY-->
+
+		<!-- ADD ORDER DETAIL WHEN CUSTOMER BUY -->
+
+		<!-- ADD ORDER WHEN CUSTOMER BUY-->
+
+		<!-- ADD PROMOTION DETAIL
+
+		<div id="add__promotion__detail" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<h3 class="page-title mt-5">Add Promotion Detail</h3> </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Promotion ID</label>
+										<select class="form-control" id="sel1" name="sellist1">
+											<option>Select</option>
+											<option>Jennifer Robinson</option>
+											<option>Terry Baker</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									
+								</div>
+
+								<div class="col-md-4">
+									
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Watch Name</label>
+										<select class="form-control" id="sel1" name="sellist1">
+											<option>Select</option>
+											<option>Jennifer Robinson</option>
+											<option>Terry Baker</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary buttonedit1">Create Promotion Detail</button>
+			</div>
+		</div> -->
+
+		<!-- ADD PROMOTION-->
+		<div id="add__promotion" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<h3 class="page-title mt-5">Add Promotion</h3> </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Start Date</label>
+										<div class="cal-icon">
+											<input type="text" class="form-control datetimepicker"> </div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>End Date</label>
+										<div class="cal-icon">
+											<input type="text" class="form-control datetimepicker"> </div>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Discount</label>
+										<input class="form-control" type="text" value=""> </div>
+								</div>
+
+							</div>
+						</form>
+					</div>
+
+					<div id="watch__name__list" class="col-lg-12">
+
+						<div class="row formtype">
+
+							<div class="col-md-4">
+								<div class="form-group">
+									<!-- <label>Watch name</label> -->
+									<button id="add__watch__name" type="button" class="btn btn-primary buttonedit form-control">ADD WATCH NAME</button>
+								</div>
+							</div>
+	
+							<div class="col-md-4">
+								<div class="form-group">
+									<!-- <label>Watch name</label> -->
+									<button id="remove__watch__name" type="button" class="btn btn-primary buttonedit form-control">REMOVE WATCH NAME</button>
+								</div>
+							</div>							
+	
+							<div class="col-md-4"></div>
+	
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Watch name</label>
+									<input class="form-control" type="text">
+								</div>
+							</div>
+
+						</div>		
+						
+					</div>
+
+				</div>
+				<button type="button" class="btn btn-primary buttonedit1">Create Promotion</button>
+			</div>
+		</div>
+
+		<!-- ADD PROVINCE -->
+		<div id="add__province" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<h3 class="page-title mt-5">Add Province</h3> </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Province Name</label>
+										<input id="province__name__create" class="form-control" type="text"></div>
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</div>
+				<button id="add__province__btn" type="button" class="btn btn-primary buttonedit1">Create Province</button>
+			</div>
+		</div>
+
+		<!-- ADD TYPE OF WATCH -->
+		<div id="add__type__of__watch" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<h3 class="page-title mt-5">Add Type Of Watch</h3> </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+								<div class="col-md-4">
+									
+									<div class="form-group">
+										<label>Type Of Watch Name</label>
+										<input id="type__of__watch__name__create" class="form-control" type="text"> </div>
+									</div>
+
+							</div>
+						</form>
+					</div>
+				</div>
+				<button id="add__type__of__watch__btn" type="button" class="btn btn-primary buttonedit1">Create Type Of Watch</button>
+			</div>
+		</div>
+
+		<!-- ADD WARD -->
+		<div id="add__ward" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<h3 class="page-title mt-5">Add Ward</h3> </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Ward Name</label>
+										<input class="form-control" type="text"> </div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Province Name</label>
+										<select class="form-control" id="sel1" name="sellist1">
+											<option>Select</option>
+											<option>Jennifer Robinson</option>
+											<option>Terry Baker</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>District Name</label>
+										<select class="form-control" id="sel1" name="sellist1">
+											<option>Select</option>
+											<option>Jennifer Robinson</option>
+											<option>Terry Baker</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary buttonedit1">Create Ward</button>
+			</div>
+		</div>
+
+		<!-- ADD WATCH -->
+		<div id="add__watch" class="page-wrapper" style="display: none;">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<h3 class="page-title mt-5">Add Watch</h3> </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form>
+							<div class="row formtype">
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Watch Name</label>
+										<input id="watch__name__create" class="form-control" type="text"> </div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Watch Price</label>
+										<input id="watch__price__create" class="form-control" type="text"> </div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Image</label>
+										<div class="custom-file mb-3">
+											<input type="file" class="custom-file-input" id="watch__img__create" name="filename">
+											<label class="custom-file-label" for="watch__img__create">Choose file</label>
+										</div>
+									</div>
+									<div class="image-preview">
+										<img id="imagePreview" src="" alt="Image Preview" style="max-width: 100%; height: 100px;">
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Quantity</label>
+										<input id="watch__quantity__create" class="form-control" type="text"> </div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Brand</label>
+										<select id="watch__brand__create" class="form-control" name="sellist1">
+											
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Type Of Watch</label>
+										<select id="watch__type__create" class="form-control" id="sel1" name="sellist1">
+											
+										</select>
+									</div>
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</div>
+				<button id="watch__create__btn" type="button" class="btn btn-primary buttonedit1">Create Watch</button>
+			</div>
+		</div>		
+
+	</div>
+
+	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="assets1/js/jquery-3.5.1.min.js"></script>
+	<script src="assets1/js/popper.min.js"></script>
+	<script src="assets1/js/bootstrap.min.js"></script>
+	<script src="assets1/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="assets1/plugins/datatables/datatables.min.js"></script>
+	<script src="assets1/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets1/plugins/raphael/raphael.min.js"></script>
+	<script src="assets1/js/moment.min.js"></script>
+	<script src="assets1/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/home-employee.js"></script>
+	<script src="assets1/js/script.js"></script>
+	<script>
+			$(function () {
+				$('#datetimepicker3').datetimepicker({
+					format: 'LT'
+
+				});
+			});
+	</script>
+	<script>
+		$(document).ready(function () {
+			$("#watch__img__create").change(function () {
+				var fileInput = $(this)[0];
+				var imagePreview = $("#imagePreview")[0];
+	
+				if (fileInput.files && fileInput.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function (e) {
+						imagePreview.src = e.target.result;
+					};
+					reader.readAsDataURL(fileInput.files[0]);
+				}
+			});
+		});
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			$("#watch__img").change(function () {
+				var fileInput = $(this)[0];
+				var imagePreview = $("#image__view")[0];
+
+				if (fileInput.files && fileInput.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function (e) {
+						imagePreview.src = e.target.result;
+					};
+					reader.readAsDataURL(fileInput.files[0]);
+				}
+			});
+		});
+	</script>
+
+</body>
+
+</html>
